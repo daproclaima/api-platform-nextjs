@@ -40,3 +40,10 @@ docker-compose exec php sh -c '
     bin/console cache:clear
 '
 ```
+
+### Create Next.js PWA
+```bash
+docker-compose exec pwa \
+    generate-api-platform-client
+```
+
