@@ -21,3 +21,22 @@ docker-compose logs -f
 ```bash
 docker-compose stop 
 ```
+
+
+### Exectute php script to create entities despite the app is in a docker container
+```bash
+docker-compose exec php \
+    bin/console make:entity --api-resource
+```
+
+By prepending `docker-compose exec php` to your composer script, you can type any php commands as usual.
+You can [create an alias for this command](http://www.linfo.org/alias.html) like this `alias dcphp=docker-compose exec php`
+
+
+### Install Graphql API 
+```bash
+docker-compose exec php sh -c '
+    composer require webonyx/graphql-php
+    bin/console cache:clear
+'
+```
